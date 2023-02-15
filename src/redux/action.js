@@ -36,6 +36,7 @@ export const addUser = (user) => {
       .then((resp) => {
       console.log('resp', resp)
         dispatch(userAdded())
+        dispatch(loadUsers())
       }).catch(error => console.log(error))
   }
 }
