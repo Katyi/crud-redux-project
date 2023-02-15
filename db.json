@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alex S",
+      "email": "my-email@gmail",
+      "contact": "9267778899",
+      "gender": "female"
+    },
+    {
+      "id": 2,
+      "name": "Jane B",
+      "email": "JaneB@gmail",
+      "contact": "9269996677",
+      "gender": "female"
+    },
+    {
+      "id": 3,
+      "name": "Jhon K",
+      "email": "JohnK@gmail",
+      "contact": "9263332211",
+      "gender": "male"
+    },
+    {
+      "name": "Joana S",
+      "email": "Joana@gmail.com",
+      "contact": "8976663322",
+      "gender": "female",
+      "id": 4
+    }
+  ]
+}
