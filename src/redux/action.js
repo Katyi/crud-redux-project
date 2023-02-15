@@ -20,8 +20,10 @@ const userAdded = () => ({
 })
 
 export const getSingleUser = (id) => {
-  return function (dispatch) {
-    axios.get(`http://localhost:5000/users/${id}`).then((resp) => {
+  return async function (dispatch) {
+    // axios.get(`http://localhost:5000/users/${id}`).then((resp) => {
+    await axios.get(`https://mock-api-n5tc.onrender.com/users/${id}`).then((resp) => {
+      // https://my-json-server.typicode.com/katyi/db-for-crud-redux-project/db
       console.log('resp', resp)
       dispatch(getUser(resp.data))
     }).catch(error => console.log(error))
@@ -29,17 +31,17 @@ export const getSingleUser = (id) => {
 }
 
 export const addUser = (user) => {
-  return function (dispatch) {
-    axios.post(`http://localhost:5000/users`, user)
+  return async function (dispatch) {
+    await axios.post(`https://mock-api-n5tc.onrender.com/users`, user)
       .then((resp) => {
       console.log('resp', resp)
         dispatch(userAdded())
-    }).catch(error => console.log(error))
+      }).catch(error => console.log(error))
   }
 }
 export const updateUser = (user, id) => {
-  return function (dispatch) {
-    axios.put(`http://localhost:5000/users/${id}`, user)
+  return async function (dispatch) {
+    await axios.put(`https://mock-api-n5tc.onrender.com/users/${id}`, user)
       .then((resp) => {
       console.log('resp', resp)
         dispatch(userUpdated())
@@ -49,8 +51,8 @@ export const updateUser = (user, id) => {
 }
 
 export const deleteUser = (id) => {
-  return function (dispatch) {
-    axios.delete(`http://localhost:5000/users/${id}`).then((resp) => {
+  return async function (dispatch) {
+    await axios.delete(`https://mock-api-n5tc.onrender.com/users/${id}`).then((resp) => {
       console.log('resp', resp)
       dispatch(userDeleted())
       dispatch(loadUsers())
@@ -59,8 +61,8 @@ export const deleteUser = (id) => {
 }
 
 export const loadUsers = () => {
-  return function (dispatch) {
-    axios.get(`http://localhost:5000/users`).then((resp) => {
+  return async function (dispatch) {
+    await axios.get(`https://mock-api-n5tc.onrender.com/users`).then((resp) => {
       console.log('resp', resp)
       dispatch(getUsers(resp.data))
     }).catch(error=>console.log(error))
